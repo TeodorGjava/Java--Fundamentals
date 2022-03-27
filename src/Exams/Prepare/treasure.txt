@@ -1,0 +1,18 @@
+list separated by "|"
+until "Yohoho!"
+
+Loot item 1 - 2 -3 -n
+pickup treasure loot insert the items at the begginning
+if already contained dont insert
+
+Drop index
+remove the loot at the given index and add it at the end
+if invalid  index skip
+
+Steal count
+someone steals the last count items if there are fewer remove as much as there are
+print the stolen item1, item2,
+
+avg treasure gain = sum of all treasure length divided by count of items inside %.2f
+"Average treasure gain: %s pirate credits"
+iif empty " Failed treasure hunt."

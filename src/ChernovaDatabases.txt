@@ -1,0 +1,41 @@
+2
+Solmyr 85 120
+Kyrre 99 50
+Heal - Solmyr - 10
+Recharge - Solmyr - 50
+TakeDamage - Kyrre - 66 - Orc
+CastSpell - Kyrre - 15 - ViewEarth
+End
+Hawai::HawaiCyprys-Greece
+Add Stop
+Remove Stop:111:163
+Switch:Hawai:Bulgaria
+Travel
+
+3
+Arnoldii<->4
+Woodii<->7
+Welwitschia<->2
+Rate: Woodii - 10
+Rate: Welwitschia - 7
+Rate: Arnoldii - 3
+Rate: CSKA - 5
+Update: Woodii - 5
+Reset: Arnoldii
+Exhibition
+
+
+#Bread#19/03/21#4000#|Invalid|03/03.20||Apples|08/10/20|200||Carrots|06/08/20|500||Not right|6.8.20|5|#Bread#19/03/21#4000#|I
+
+
+4
+Eine kleine Nachtmusik|Mozart|G Major
+La Campanella|Liszt|G# Minor
+The Marriage of Figaro|Mozart|G Major
+Hungarian Dance No.5|Brahms|G Minor
+Add|Spring|Vivaldi|E Major
+Remove|The Marriage of Figaro
+Remove|Turkish March
+ChangeKey|Spring|C Major
+Add|Nocturne|Chopin|C# Minor
+Stop

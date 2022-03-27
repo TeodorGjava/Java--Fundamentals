@@ -1,0 +1,74 @@
+school library
+Strings- shelf with books first
+command[] separated with "|":
+switch command : until "Done"
+"Add":
+add the book in the first place(index 0);
+if book already exists, ignore.
+"Take":
+Remove the book by name if exists.
+"Swap Books":
+if both books exist, swap their places
+"Insert Book":
+Add the given book at the end
+if already exist ignore
+"Check book":
+print the name of the book on given idex.
+if index is valid, or skip if unvalid
+
+Input:
+    1st line shelf books sep by"&".
+    following lines until "Done" switch the commands in format above.
+
+Output:
+print the collection of books joined by ", "
+
+
+
+
+
+02 coffee lover
+
+in stock String list .split " "
+coffee1 coffee2...
+inte - n;
+n = count of command
+String commands
+switch
+"Include":
+add to the end
+"Remove"(first/last){numOfCoffees}:
+depending on input remove either the "first" or "last" count of coffees from list
+if coffees are fewer than numOfCoffees : SKIP
+
+"Prefer {index1},{index2}":
+if both exist change places
+if don't SKIP
+
+"Reverse":
+reverse the list
+
+print the list in following format"
+"Coffees :
+coffee1 coffee2 "
+
+
+Arabica Liberica Charrieriana Magnistipula Robusta BulkCoffee StrongCoffee
+5
+Include TurkishCoffee
+-->Arabica Liberica Charrieriana Magnistipula Robusta
+BulkCoffee StrongCoffee TurkishCoffee
+Remove first 2
+---> Charrieriana Magnistipula Robusta
+BulkCoffee StrongCoffee TurkishCoffee
+Remove last 1
+---> Charrieriana Magnistipula Robusta
+     BulkCoffee StrongCoffee
+Prefer 3 1
+--->Charrieriana 3BulkCoffee Robusta 1Magnistipula StrongCoffee.
+Reverse
+
+StrongCoffee .Magnistipula Robusta  BulkCoffee Charrieriana
+
+
+

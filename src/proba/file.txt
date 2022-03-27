@@ -1,0 +1,2 @@
+key(500)+(key(500)*value(5/100[primer])) *litri/1000;
+voda- key(500)+(key(500)*value(5/100[primer]))
