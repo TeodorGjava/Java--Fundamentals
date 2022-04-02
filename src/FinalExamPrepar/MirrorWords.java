@@ -7,58 +7,30 @@ import java.util.regex.Pattern;
 public class MirrorWords {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<String> valid = new ArrayList<>();
         String input = sc.nextLine();
-        Pattern pattern = Pattern.compile("(?<gr1>[@][A-z]+[@]{2}[A-z]+[@])|(?<gr2>[#][A-z]+[#]{2}[A-z]+[#])");
-        Matcher matcher = pattern.matcher(input);
-        while (matcher.find()) {
-            String gr1 = matcher.group("gr1");
-            String gr2 = matcher.group("gr2");
-            if (gr1 != null) {
-                valid.add(gr1);
-            }
-            if (gr2 != null) {
-                valid.add(gr2);
-            }
+        Pattern hiddenWordPattern = Pattern.compile("([@#])(?<word>[A-Za-z]{3,})\\1\\1(?<mirror>[A-Za-z]{3,})\\1");
+        Matcher matcher = hiddenWordPattern.matcher(input);
 
-        }
-        List<String> passedCheck = new ArrayList<>();
-
-        for (int i = 0; i < valid.size(); i++) {
-            StringBuilder one = new StringBuilder();
-            StringBuilder two = new StringBuilder();
-            String thing = valid.get(i);
-            for (int j = 0; j < thing.length() / 2; j++) {
-                one.append(thing.charAt(j));
-                two.append(thing.charAt(thing.length() - j - 1));
-            }
-            if (one.toString().equals(two.toString())) {
-                passedCheck.add(thing);
+        int wordPairsCount = 0;
+        List<String> mirrorPairs = new ArrayList<>();
+        while (matcher.find()){
+            wordPairsCount++;
+            String firstWord = matcher.group("word");
+            String secondWord = new StringBuilder(matcher.group("mirror")).reverse().toString();
+            if (firstWord.equals(secondWord)){
+                mirrorPairs.add(firstWord + " <=> " + matcher.group("mirror"));
             }
         }
-        if(!valid.isEmpty()) {
-            System.out.printf("%d word pairs found!%n", valid.size());
-            System.out.printf("The mirror words are:%n");
-        }else{
+        if (wordPairsCount == 0){
             System.out.println("No word pairs found!");
+        } else {
+            System.out.printf("%d word pairs found!%n", wordPairsCount);
+        }
+        if (mirrorPairs.isEmpty()) {
             System.out.println("No mirror words!");
+        }else {
+            System.out.println("The mirror words are:");
+            System.out.print(String.join(", ", mirrorPairs));
         }
-        List<String> finalResult = new ArrayList<>();
-        for (String s:passedCheck
-             ) {
-            Pattern pattern1 = Pattern.compile("[#@](?<word>[A-z]+)[@#]{2}(?<word2>[A-z]+)");
-            Matcher matcher1 = pattern1.matcher(s);
-            while (matcher1.find()){
-                finalResult.add(matcher1.group("word")+" <=> "+matcher1.group("word2"));
-
-            }
-        }
-
-
-        String last = String.join(", ",finalResult);
-        System.out.println(last);
-
-
     }
-
 }
